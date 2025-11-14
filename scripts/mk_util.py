@@ -2012,8 +2012,8 @@ class MLComponent(Component):
         if self.destdir == "":
             raise MKException('Failed to get OCaml destdir')
 
-        if not os.path.isdir(self.destdir):
-            raise MKException('The destdir reported by {ocamlfind} ({destdir}) does not exist'.format(ocamlfind=OCAMLFIND, destdir=self.destdir))
+        # if not os.path.isdir(self.destdir):
+        #     raise MKException('The destdir reported by {ocamlfind} ({destdir}) does not exist'.format(ocamlfind=OCAMLFIND, destdir=self.destdir))
 
         self.ldconf = check_output([OCAMLFIND, 'printconf', 'ldconf'])
         if self.ldconf == "":
